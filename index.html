@@ -3,6 +3,10 @@
     <title>Angular 2 QuickStart</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">    
     <link rel="stylesheet" href="styles.css">
+    
+    <!-- 
+    Styles aren't essential but they're nice and the index.html assumes we have a stylesheet called styles.css. -->
+    
     <!-- 1. Load libraries -->
     <!-- IE required polyfills, in this exact order -->
     <script src="node_modules/es6-shim/es6-shim.min.js"></script>
@@ -14,6 +18,7 @@
     <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
     <!-- 2. Configure SystemJS -->
     <script>
+      // The packages node tells SystemJS what to do when it sees a request for a module from the app/ folder.
       System.config({
         packages: {        
           app: {
@@ -24,10 +29,18 @@
       });
       System.import('app/main')
             .then(null, console.error.bind(console));
+      /* 
+      The System.import call tells SystemJS to import the main file (main.js ... after transpiling main.ts, remember?). main is where we tell Angular to launch the application. We also catch and log launch errors to the console.*/
+
+
     </script>
   </head>
   <!-- 3. Display the application -->
   <body>
-    <my-app>Loading...</my-app>
+    <my-app>I am loading now...</my-app>
+    <!-- 
+      <my-app>
+      When Angular calls the bootstrap function in main.ts, it reads the AppComponent metadata, finds the my-app selector, locates an element tag named my-app, and loads our application between those tags. 
+    -->
   </body>
 </html>
