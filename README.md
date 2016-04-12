@@ -1,3 +1,6 @@
+# quickstartNG2
+Quickstart demo project on angular.io
+
 # Angular 2 QuickStart Source
 
 This repository holds the TypeScript source code of the [angular.io quickstart](https://angular.io/docs/ts/latest/quickstart.html),
